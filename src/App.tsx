@@ -11,9 +11,13 @@ export const App = () => {
     setItems((items) => [getRandomItem()].concat(items));
   };
 
-  const removeItem = (itemToRemove: Item) => {
-    setItems((items) => items.filter((item) => item !== itemToRemove));
+  const updateUnusedProperty = () => {
+    setItems((items) => items.map((item) => ({ ...item, unusedProperty: Math.random() })));
   };
+
+  const removeItem = useCallback((itemToRemove: Item) => {
+    setItems((items) => items.filter((item) => item.id !== itemToRemove.id));
+  }, []);
 
   return (
     <>
@@ -22,8 +26,11 @@ export const App = () => {
           <ItemBox key={item.id} item={item} onRemove={removeItem} />
         ))}
       </div>
-      <button className="fab" onClick={addItem}>
+      <button className="fab left" onClick={addItem}>
         +
+      </button>
+      <button className="fab right" onClick={updateUnusedProperty}>
+        ↻
       </button>
     </>
   );

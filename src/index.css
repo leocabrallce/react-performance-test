@@ -73,7 +73,6 @@ body,
   position: fixed;
   cursor: pointer;
   bottom: 50px;
-  left: 50px;
   width: 60px;
   height: 60px;
   background: #a11692;
@@ -82,4 +81,12 @@ body,
   border: 0;
   color: #fff;
   font-size: 2em;
+
+  &.left {
+    left: 50px;
+  }
+
+  &.right {
+    right: 50px;
+  }
 }
