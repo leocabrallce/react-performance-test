@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  font-family: "Raleway", sans-serif;
+  background: #f0f0f0;
+}
+
+.content {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  height: 80vh;
+  margin: 10vh 20vw;
+  padding: 20px;
+  position: relative;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+.content > div {
+  height: 90px;
+  overflow: visible;
+  pointer-events: auto;
+  transform-origin: 50% 50% 0px;
+  border-radius: 5px;
+  color: white;
+  padding: 0 32px;
+  line-height: 90px;
+  font-size: 14.5px;
+  background: lightblue;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content > div > button {
+  background: none;
+  padding: 1em;
+  margin: -1em;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.content > div:nth-child(1) {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+.content > div:nth-child(2) {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+.content > div:nth-child(3) {
+  background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+}
+.content > div:nth-child(4) {
+  background: linear-gradient(135deg, #c3cfe2 0%, #c3cfe2 100%);
+}
+
+.fab {
+  position: fixed;
+  cursor: pointer;
+  bottom: 50px;
+  left: 50px;
+  width: 60px;
+  height: 60px;
+  background: #a11692;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  border-radius: 100%;
+  border: 0;
+  color: #fff;
+  font-size: 2em;
+}
