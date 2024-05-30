@@ -7,6 +7,14 @@ interface ItemBoxProps {
   onRemove: (item: Item) => void;
 }
 
+function arePropsEqual(prevProps: ItemBoxProps, nextProps: ItemBoxProps) {
+  const areIdsEqual = prevProps.item.id === nextProps.item.id;
+
+  console.log(areIdsEqual ? "not changing" : "changing");
+
+  return areIdsEqual;
+}
+
 export const ItemBox = memo(({ item, onRemove }: ItemBoxProps) => {
   console.log("item", item.word);
   return (
@@ -21,4 +29,4 @@ export const ItemBox = memo(({ item, onRemove }: ItemBoxProps) => {
       </button>
     </div>
   );
-});
+}, arePropsEqual);
