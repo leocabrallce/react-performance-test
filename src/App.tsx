@@ -11,9 +11,9 @@ export const App = () => {
     setItems((items) => [getRandomItem()].concat(items));
   };
 
-  const removeItem = (itemToRemove: Item) => {
+  const removeItem = useCallback((itemToRemove: Item) => {
     setItems((items) => items.filter((item) => item !== itemToRemove));
-  };
+  }, []);
 
   return (
     <>
